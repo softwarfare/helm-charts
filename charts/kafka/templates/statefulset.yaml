@@ -73,7 +73,7 @@ spec:
         - name: KAFKA_CONFLUENT_SUPPORT_METRICS_ENABLE
           value: {{ .Values.confluentSupportMetricsEnable | quote }}
         - name: KAFKA_LOG_DIRS
-          value: "/var/lib/kafka/data"
+          value: {{ .Values.logDirs | quote }}
         - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
           value: {{ .Values.autoCreateTopicsEnable | quote }}
         - name: KAFKA_DELETE_TOPIC_ENABLE
