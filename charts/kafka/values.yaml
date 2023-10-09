@@ -20,6 +20,8 @@ maxUnavailable: 1
 
 ## Kafka Configuration
 ## ref: https://docs.confluent.io/platform/current/installation/configuration/broker-configs.html
+logDirs:
+  - /var/lib/kafka/data
 heapOpts: -XX:MaxRAMPercentage=75.0 -XX:InitialRAMPercentage=50.0
 confluentSupportMetricsEnable: false
 autoCreateTopicsEnable: false
