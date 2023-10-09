@@ -137,6 +137,7 @@ spec:
         - "sh"
         - "-exc"
         - |
+          rm -rf /opt/kafka/data/lost+found
           export KAFKA_BROKER_ID=${HOSTNAME##*-} && \
           {{- if .Values.isDocker }}
           export KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://{{ include "kafka.listener" . }}:{{ .Values.port.kafkaInternal }},EXTERNAL://127.0.0.1:$(({{ .Values.externalAccess.initNodePort }} + ${KAFKA_BROKER_ID})) && \
